@@ -1,4 +1,4 @@
-# Class Repository Template
+# Class Repository for Python 210B - Winter 2019
 
 **WARNING** This is a template -- it is not an actual class repo. Students should find the proper repo for their class, and make a fork of that.
 
