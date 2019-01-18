@@ -5,17 +5,21 @@
 # Python 210, Assigment 2
 # series.py
 
-# Fibonacci sequency is nautually recursive, fib(n) = fib(n-2) + fib(1)
-# One of the few recursive problems I remember, so I'm using it!
 def fibonacci(n):
+    """ 
+    recursively computes the nth Fibonacci number 
+    fib(n) = fib(n-2) + fib(n-1)
+    """
     if (n <= 1):
         return n
     return fibonacci(n-2) + fibonacci(n-1)
 
-# Lucas numbers are also equal to the sum of the previous two numbers in the series.
-# They however start differently: When n=0, lucas = 2 and when n=1, lucas = 1.
-# We can again use recursion for the solution with different initial conditions.
 def lucas(n):
+    """ 
+    recursively computes the nth Lucas number
+    lucas(n) = lucas(n-2) + lucas(1).
+    when n=0, lucas = 2 and when n=1, lucas = 1
+    """
     if (n == 0):
         return 2
     if (n == 1):
@@ -23,6 +27,17 @@ def lucas(n):
     return lucas(n-2) + lucas(n-1)
 
 def sum_series(n, n0=0, n1=1):
+    """
+    recursively computes the nth value of a summation series.
+
+    :param n0=0: value of zeroth element in the series
+    :param n1=1: value of first element in the series
+    This way, if no arguments are passed, it defaults to a Fibonacci sequence.
+
+    This function generalizes the fibonacci() and the lucas(),
+    so that this function works for any first two numbers for a sum series.
+    """
+    
     if (n == 0):
         return n0
     if (n == 1):
@@ -30,6 +45,7 @@ def sum_series(n, n0=0, n1=1):
     return sum_series(n-2,n0,n1) + sum_series(n-1,n0,n1)
 
 if __name__ == "__main__":
+    """ series.main """
 #    for i in range(10):
 #        print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
 #    for i in range(10):
@@ -50,12 +66,10 @@ if __name__ == "__main__":
 
     assert lucas(0) == 2
     assert lucas(1) == 1
-
     assert lucas(4) == 7
 
     assert sum_series(5) == fibonacci(5)
-
-    # test if sum_series matched lucas
+    assert sum_series(5,n1=1,n0=0) == fibonacci(5)
     assert sum_series(5, 2, 1) == lucas(5)
 
     print("tests passed")
