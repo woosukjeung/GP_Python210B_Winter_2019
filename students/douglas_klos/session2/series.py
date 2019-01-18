@@ -22,8 +22,9 @@ def lucas(n):
         return 1
     return lucas(n-2) + lucas(n-1)
 
-for i in range(20):
-    print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
-for i in range(20):
-    print('lucas(' + str(i) + '): ' + str(lucas(i)))
+if __name__ == "__main__":
+    for i in range(20):
+        print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
+    for i in range(20):
+        print('lucas(' + str(i) + '): ' + str(lucas(i)))
 
