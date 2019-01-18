@@ -22,9 +22,40 @@ def lucas(n):
         return 1
     return lucas(n-2) + lucas(n-1)
 
-if __name__ == "__main__":
-    for i in range(20):
-        print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
-    for i in range(20):
-        print('lucas(' + str(i) + '): ' + str(lucas(i)))
+def sum_series(n, n0=0, n1=1):
+    if (n == 0):
+        return n0
+    if (n == 1):
+        return n1
+    return sum_series(n-2,n0,n1) + sum_series(n-1,n0,n1)
 
+if __name__ == "__main__":
+#    for i in range(10):
+#        print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
+#    for i in range(10):
+#        print('lucas(' + str(i) + '): ' + str(lucas(i)))
+#    for i in range(10):
+#        print('sum_series(' + str(i) + '): ' + str(sum_series(i,0,1)))
+#    for i in range(10):
+#        print('sum_series(' + str(i) + '): ' + str(sum_series(i,2,1)))
+
+    assert fibonacci(0) == 0
+    assert fibonacci(1) == 1
+    assert fibonacci(2) == 1
+    assert fibonacci(3) == 2
+    assert fibonacci(4) == 3
+    assert fibonacci(5) == 5
+    assert fibonacci(6) == 8
+    assert fibonacci(7) == 13
+
+    assert lucas(0) == 2
+    assert lucas(1) == 1
+
+    assert lucas(4) == 7
+
+    assert sum_series(5) == fibonacci(5)
+
+    # test if sum_series matched lucas
+    assert sum_series(5, 2, 1) == lucas(5)
+
+    print("tests passed")
