@@ -44,10 +44,10 @@ def print_grid2(x, y):
         print('Enter Row & Column count > 0, and cell size >= 0')
         return
     for a in range(x):
-        print((('+ ' + '- '*y)*x) + '+')
+        print((('+ ' + '- '*y) *x) + '+')
         for b in range(y):
-            print((('| ' + '  '*y)*x) + '|')
-    print((('+ ' + '- '*y)*x) + '+\n')
+            print((('| ' + '  '*y) *x) + '|')
+    print((('+ ' + '- '*y) *x) + '+\n')
 
 
 if __name__ == "__main__":
