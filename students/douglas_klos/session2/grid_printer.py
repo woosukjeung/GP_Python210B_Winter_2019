@@ -10,10 +10,10 @@ def print_grid0():
     """
     Simply prints the static 2 x 2 grid shown at the start of the assignment.
     """
-    str1 = '+ ' + '- ' * 4 + '+ ' + '- ' * 4 + '+ ' + '\n'
-    str2 = '| ' + '  ' * 4 + '| ' + '  ' * 4 + '| ' + '\n'
+    str1 = '+ ' + '- '*4 + '+ ' + '- '*4 + '+ ' + '\n'
+    str2 = '| ' + '  '*4 + '| ' + '  '*4 + '| ' + '\n'
 
-    print(str1 + str2 * 4 + str1 + str2 * 4 + str1)
+    print(str1 + str2*4 + str1 + str2*4 + str1)
 
 
 def print_grid1(x):
@@ -29,9 +29,9 @@ def print_grid1(x):
         return
     size = x // 2
 
-    str1 = ('+ ' + '- ' * size + '+ ' + '- ' * size + '+' + '\n')
-    str2 = ('| ' + '  ' * size + '| ' + '  ' * size + '|' + '\n')
-    print(str1 + str2 * size + str1 + str2 * size + str1)
+    str1 = ('+ ' + '- '*size + '+ ' + '- '*size + '+' + '\n')
+    str2 = ('| ' + '  '*size + '| ' + '  '*size + '|' + '\n')
+    print(str1 + str2*size + str1 + str2*size + str1)
 
 
 def print_grid2(x, y):
@@ -44,10 +44,10 @@ def print_grid2(x, y):
         print('Enter Row & Column count > 0, and cell size >= 0')
         return
     for a in range(x):
-        print((('+ ' + '- ' * y) * x) + '+')
+        print((('+ ' + '- '*y)*x) + '+')
         for b in range(y):
-            print((('| ' + '  ' * y) * x) + '|')
-    print((('+ ' + '- ' * y) * x) + '+\n')
+            print((('| ' + '  '*y)*x) + '|')
+    print((('+ ' + '- '*y)*x) + '+\n')
 
 
 if __name__ == "__main__":
