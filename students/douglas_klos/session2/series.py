@@ -1,30 +1,33 @@
 #!/usr/bin/env python3
 
 # Douglas Klos
-# January 19th, 2019
+# January 20th, 2019
 # Python 210, Assigment 2
 # series.py
 
+
 def fibonacci(n):
-    """ 
-    recursively computes the nth Fibonacci number 
+    """
+    recursively computes the nth Fibonacci number
     fib(n) = fib(n-2) + fib(n-1)
     """
     if (n <= 1):
         return n
     return fibonacci(n-2) + fibonacci(n-1)
 
+
 def lucas(n):
-    """ 
+    """
     recursively computes the nth Lucas number
     lucas(n) = lucas(n-2) + lucas(1).
-    when n=0, lucas = 2 and when n=1, lucas = 1
+    when n == 0, lucas = 2 and when n == 1, lucas = 1
     """
     if (n == 0):
         return 2
     if (n == 1):
         return 1
     return lucas(n-2) + lucas(n-1)
+
 
 def sum_series(n, n0=0, n1=1):
     """
@@ -37,12 +40,13 @@ def sum_series(n, n0=0, n1=1):
     This function generalizes the fibonacci() and the lucas(),
     so that this function works for any first two numbers for a sum series.
     """
-    
+
     if (n == 0):
         return n0
     if (n == 1):
         return n1
-    return sum_series(n-2,n0,n1) + sum_series(n-1,n0,n1)
+    return sum_series(n-2, n0, n1) + sum_series(n-1, n0, n1)
+
 
 if __name__ == "__main__":
     """ series.main """
@@ -69,7 +73,7 @@ if __name__ == "__main__":
     assert lucas(4) == 7
 
     assert sum_series(5) == fibonacci(5)
-    assert sum_series(5,n1=1,n0=0) == fibonacci(5)
+    assert sum_series(5, n1=1, n0=0) == fibonacci(5)
     assert sum_series(5, 2, 1) == lucas(5)
 
     print("tests passed")

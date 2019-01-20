@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Douglas Klos
-# January 19th, 2019
+# January 20th, 2019
 # Python 210, Assignment 2
 # grid_printer.py
 
