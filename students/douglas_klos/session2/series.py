@@ -50,14 +50,6 @@ def sum_series(n, n0=0, n1=1):
 
 if __name__ == "__main__":
     """ series.main """
-#    for i in range(10):
-#        print('fibonacci(' + str(i) + '): ' + str(fibonacci(i)))
-#    for i in range(10):
-#        print('lucas(' + str(i) + '): ' + str(lucas(i)))
-#    for i in range(10):
-#        print('sum_series(' + str(i) + '): ' + str(sum_series(i,0,1)))
-#    for i in range(10):
-#        print('sum_series(' + str(i) + '): ' + str(sum_series(i,2,1)))
 
     assert fibonacci(0) == 0
     assert fibonacci(1) == 1
