@@ -11,5 +11,3 @@ def grid(a,b):
         for i in range(b):
             vert(b,a)
     horz(a,b)
-
-grid(6,4)
