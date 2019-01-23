@@ -24,6 +24,8 @@ def lucas(n):
 
 
 def sum_series(n, *args):
+    a = int()
+    b = int()
     if args:
         a,b = args
     if a == 2 and b ==1:
