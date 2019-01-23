@@ -12,4 +12,25 @@ def grid_printer(g_size):
             print(l + s + l + s + l)
     print(p + m + p + m + p)
 
-grid_printer(15)
+# grid_printer(15)
+
+def fancy_grid_printer(rowCol, length):
+    m = '-' * length
+    s = ' ' * length
+
+    for i in range(rowCol):
+        for j in range(rowCol):
+            print(p + m, end='')
+        print(p)
+
+        for j in range(length):
+            for k in range(rowCol):
+                print(l + s, end="")
+            print(l)
+
+    for j in range(rowCol):
+        print(p + m, end="")
+    print(p)
+
+# fancy_grid_printer(3, 2)
+fancy_grid_printer(5, 3)
