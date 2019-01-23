@@ -23,4 +23,10 @@ def lucas(n):
         return a
 
 
-
+def sum_series(n, *args):
+    if args:
+        a,b = args
+    if a == 2 and b ==1:
+        return lucas(n)
+    else:
+        return fibonacci(n)
