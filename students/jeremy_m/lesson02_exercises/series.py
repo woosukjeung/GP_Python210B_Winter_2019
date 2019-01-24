@@ -1,6 +1,7 @@
 # Lesson 02 Exercise: Fibonacci Series
 # Jeremy Monroe
 
+
 def fibonacci(n):
     """ Returns the integer at index n in the fibonacci sequence. """
     if n <= 0:
@@ -36,5 +37,19 @@ def sum_series(n, o=0, p=1):
     else:
         return sum_series(n - 1, o, p) + sum_series(n - 2, o, p)
 
+
 # this should return 7, the 4th index in the lucas numbers
-print(sum_series(4, 2, 1))
+# print(sum_series(4, 2, 1))
+
+
+if __name__ == '__main__':
+    assert fibonacci(4) == 3
+    assert fibonacci(12) == 144
+
+    assert lucas(4) == 7
+    assert lucas(10) == 123
+
+    assert sum_series(6) == fibonacci(6)
+    assert sum_series(3, 2, 1) == lucas(3)
+
+    print('All tests passed')
