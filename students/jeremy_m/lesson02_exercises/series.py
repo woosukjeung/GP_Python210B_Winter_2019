@@ -26,11 +26,15 @@ def lucas(n):
 
 
 def sum_series(n, o=0, p=1):
-    if n < 0:
+    """ Returns the integer at index n from a series based on the starting
+        numbers specified with parameters o and p. The default settings of these
+        parameters result in the fibonacci series """
+    if n <= 0:
         return o
     elif n < p + 1:
         return n
     else:
         return sum_series(n - 1, o, p) + sum_series(n - 2, o, p)
 
-print(sum_series(6, 1, 2))
+# this should return 7, the 4th index in the lucas numbers
+print(sum_series(4, 2, 1))
