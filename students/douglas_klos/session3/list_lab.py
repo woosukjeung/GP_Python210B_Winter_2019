@@ -50,7 +50,6 @@ def series2():
     the list.  Asks the user for a fruit to delete, finds it, and
     deletes it.  Bonus section: Multiplies the list by 2, continues
     asking for a fruit until one is found, then deletes all occurances.
-
     """
 
     print("Series 2:")
