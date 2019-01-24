@@ -1,7 +1,11 @@
+# Lesson 02 Exercise: Grid Printer
+# Jeremy Monroe
+
 p = '+'
 l = '|'
 
 def grid_printer(g_size):
+    """ Prints a 4x4 grid where the length & width of each cell == g_size """
     half_g = g_size // 2
     m = '-' * (half_g)
     s = ' ' * (half_g)
@@ -15,6 +19,8 @@ def grid_printer(g_size):
 # grid_printer(15)
 
 def fancy_grid_printer(rowCol, length):
+    """ Prints a grid where rowCol sets the number of rows and columns
+        and length sets the length & width of each cell. """
     m = '-' * length
     s = ' ' * length
 
