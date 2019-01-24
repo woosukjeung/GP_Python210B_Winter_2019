@@ -111,7 +111,7 @@ def task5():
 
     # We use precision of 6 for oranges and 5 for lemons to drop
     # the plural 's'.  f-string usage here is more simple than task2().
-    print(f'The weight of an {list_to_format[0]:.6}'
+    print(f'The weight of an {list_to_format[0]:.6} '
           f'is {list_to_format[1]} '
           f'and the weight of a {list_to_format[2]:.5}'
           f'is {list_to_format[3]}')
