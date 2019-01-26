@@ -42,6 +42,7 @@ def sum_series(n, o=0, p=1):
 # print(sum_series(4, 2, 1))
 
 
+
 if __name__ == '__main__':
     assert fibonacci(4) == 3
     assert fibonacci(12) == 144
