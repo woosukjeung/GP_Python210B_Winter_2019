@@ -5,42 +5,26 @@ a template for the series assignment
 """
 
 
+def sum_series(n, *args):
+    """returns nth fibonacci if no args"""
+    """else nth lucas if args are 2 and 1"""
+    count = 0
+    a, b  = int(), int()
+    if args:
+        a, b = args
+    else:
+        a, b = 0, 1
+    while count < n:
+        a, b = b, a + b
+        count += 1
+    if count == n:
+        return a
+
 def fibonacci(n):
-    count = 0
-    a,b = 0,1
-    while count < n:
-        a, b = b, a+b
-        count +=1
-    if count == n:
-        return a
+    return sum_series(n)
 
-
-def lucas(n):
-    count = 0
-    a,b = 2,1
-    while count < n:
-        #begin fibonacci sequence: a now = 1, b now = 0+1
-        a, b = b, a+b
-        #increment count by 1 with each iteration
-        count +=1
-    if count == n:
-        #return result when nth fibonnci is calculated.
-        return a
-
-
-def sum_series(n, n0=0, n1=1):
-    """
-    compute the nth value of a summation series.
-
-    :param n0=0: value of zeroth element in the series
-    :param n1=1: value of first element in the series
-    
-    This function should generalize the fibonacci() and the lucas(),
-    so that this function works for any first two numbers for a sum series.
-    Once generalized that way, sum_series(n, 0, 1) should be equivalent to fibonacci(n).
-    And sum_series(n, 2, 1) should be equivalent to lucas(n).
-    """
-    pass
+def lucas(n, *args):
+    return sum_series(n, *args)
 
 if __name__ == "__main__":
     # run some tests
@@ -53,14 +37,14 @@ if __name__ == "__main__":
     assert fibonacci(6) == 8
     assert fibonacci(7) == 13
 
-    assert lucas(0) == 2
-    assert lucas(1) == 1
+    assert lucas(0,2,1) == 2
+    assert lucas(1,2,1) == 1
 
-    assert lucas(4) == 7
+    assert lucas(4,2,1) == 7
 
     assert sum_series(5) == fibonacci(5)
 
     # test if sum_series matched lucas
-    assert sum_series(5, 2, 1) == lucas(5)
+    assert sum_series(5, 2, 1) == lucas(5,2,1)
 
     print("tests passed")

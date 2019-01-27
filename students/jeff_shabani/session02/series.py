@@ -1,34 +1,25 @@
-def fibonacci(n):
-    count = 0
-    a,b = 0,1
-    while count < n:
-        #begin fibonacci sequence: a now = 1, b now = 0+1
-        a, b = b, a+b
-        #increment count by 1 with each iteration
-        count +=1
-    if count == n:
-        #return result when nth fibonnci is calculated.
-        return a
-
-def lucas(n):
-    count = 0
-    a,b = 2,1
-    while count < n:
-        #begin fibonacci sequence: a now = 1, b now = 0+1
-        a, b = b, a+b
-        #increment count by 1 with each iteration
-        count +=1
-    if count == n:
-        #return result when nth fibonnci is calculated.
-        return a
-
-
 def sum_series(n, *args):
-    a = int()
-    b = int()
+    """returns nth fibonacci if no args"""
+    """else nth lucas if args are 2 and 1"""
+    count = 0
+    a, b  = int(), int()
     if args:
-        a,b = args
-    if a == 2 and b ==1:
-        return lucas(n)
+        a, b = args
     else:
-        return fibonacci(n)
+        a, b = 0, 1
+    while count < n:
+        a, b = b, a + b
+        count += 1
+    if count == n:
+        return a
+
+def fibonacci(n):
+    return sum_series(n)
+
+def lucas(n, *args):
+    return sum_series(n, *args)
+
+if __name__ == '__main__':
+    assert lucas(5, 2, 1) == 11
+    assert lucas(5) == 5
+    assert fibonacci(7) == 13
