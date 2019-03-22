@@ -25,8 +25,6 @@ def test_send_letters_to_all_donors_text():
     expected = "Dear Jeff Bezos,\n\n" \
                 "        Thank you for your very kind donation of $    877.33.\n" \
                 "\n" \
-                "        It will be put to very good use.\n" \
-                "\n" \
                 "                       Sincerely\n" \
                 "                          -The Team"
     assert send_letters_to_all_donors_test('Jeff Bezos', donor_db) == expected
